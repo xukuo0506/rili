@@ -1,0 +1,54 @@
+@function rem($px) {
+    @return $px / 37.5px * 1rem; //把px单位换算成rem单位。 $designWidth ：视觉稿的宽度
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    .box {
+        width: 100%;
+        height: rem(200px);
+        background: red;
+        overflow: hidden;
+        ul {
+            width: rem(1875px);
+            height: rem(200px);
+            display: flex;
+            transition: 2s;
+            li {
+                width: rem(375px);
+                height: rem(200px);
+                img {
+                    width: rem(375px);
+                    height: rem(200px);
+                }
+            }
+        }
+    }
+}
+
+.in {
+    // animation: dynamic1 2s linear forwards;
+}
+
+@keyframes dynamic1 {
+    from {
+        transform: translateX(10%);
+    }
+    to {
+        transform: translateX(60%);
+    }
+}
